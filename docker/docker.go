@@ -39,9 +39,10 @@ type Image struct {
 }
 
 func (i *Image) LayerName(index int) string {
-	s := fmt.Sprintf("%s%s", trimDigest(i.digest),
-		trimDigest(i.FsLayers[index].BlobSum))
-	return s
+	//	s := fmt.Sprintf("%s%s", trimDigest(i.digest),
+	//	trimDigest(i.FsLayers[index].BlobSum))
+	//return s
+	return i.FsLayers[index].BlobSum
 }
 
 func (i *Image) AnalyzedLayerName() string {
